@@ -1,0 +1,3 @@
+#!/bin/bash
+
+uvicorn flashcard_analytics.flashcard_analytics_api:app
