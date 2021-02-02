@@ -62,7 +62,5 @@ if __name__ == "__main__":
                         required=False,
                         default=True,
                         help="save flash cards in the directory")
-    parser.print_usage()
-    parser.print_help()
     args = parser.parse_args()
     flash_card_demo(args.experiment_directory, args.file_name, args.model_name, args.max_len, args.save_cards)
