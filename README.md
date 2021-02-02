@@ -10,7 +10,7 @@ usage: python -m flashcard_cli.flashcard_demo  [-h] -d EXPERIMENT_DIRECTORY -f F
 ```
 For additional details, please refer to the python script `flashcard_demo.py`.
 
-Start the analytics module server using the following commands:
+Start the analytics module server:
 
 ```sh
 ./flashcard_analytics/start_service
