@@ -7,5 +7,5 @@ class FlashCard:
     question: str
     answer: str
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         self.card = {'card': self.question, 'answer': self.answer}
