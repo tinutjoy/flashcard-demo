@@ -32,7 +32,7 @@ class TestTextPreprocessor(unittest.TestCase):
         self.processor._initialize_tokenizer()
         self.assertIsInstance(self.processor.tokenizer, T5TokenizerFast)
 
-    def test_preprocessor_class(self):
+    def test_text_preprocessor_class_repr(self):
         processor_2 = TextPreprocessor("test")
         self.assertEqual(repr(processor_2), "TextPreprocessor('test')")
         self.assertNotEqual(self.processor, processor_2)
