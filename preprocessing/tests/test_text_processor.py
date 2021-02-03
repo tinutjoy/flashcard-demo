@@ -1,5 +1,6 @@
 """Tests for TextPreprocessor"""
 import unittest
+from requests.exceptions import HTTPError
 
 from transformers.models.t5.tokenization_t5_fast import T5TokenizerFast
 
@@ -38,7 +39,9 @@ class TestTextPreprocessor(unittest.TestCase):
 
     def test_load_tokenizer(self):
         loaded_tokenizer = self.processor.load_tokenizer(self.processor.tokenizer_name)
+        self.assertIsNotNone(loaded_tokenizer)
         self.assertIsInstance(loaded_tokenizer, T5TokenizerFast)
+        self.assertRaises((HTTPError, OSError, EnvironmentError), self.generator.load_model, "test")
 
     def test_tokenize(self):
         actual_tokens = self.processor.tokenize(test_tokenizer_text, max_length=10)
