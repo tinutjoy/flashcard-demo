@@ -68,6 +68,7 @@ class FlashCardGenerator:
         if self.text_processor is None:
             self.text_processor = TextPreprocessor(self.tokenizer_name)
             self.text_processor._initialize_tokenizer()
+        assert self.model is not None, f"Issues with loading pretrained {self.model_name} model"
 
     def generate_cards(self, text: str) -> Optional[List[FlashCard]]:
         """
