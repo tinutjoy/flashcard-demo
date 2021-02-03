@@ -20,7 +20,7 @@ Use the following script as an example to send a request to the server. It accep
 response as a json. Additionally, please try out the demo here ```http://127.0.0.1:8000/docs```.
 
 ```sh
-./flashcard_analytics/send_request 
+./flashcard_analytics/send_request "I live in Melbourne" 
 ```
 Note: I have borrowed some code from the repo mentioned here (https://huggingface.co/valhalla/t5-base-qa-qg-hl) which has posted the pretrained model. However, I have rewritten the code to make it modular, and readable. I have also added unittests for all the modules. Regarding API, I have used FastAPI (https://github.com/tiangolo/fastapi) to create an endpoint for the model.
 Unit tests are included in `tests` folder under each module.
