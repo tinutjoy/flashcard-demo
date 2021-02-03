@@ -30,7 +30,7 @@ class TestFlashCardGenerator(unittest.TestCase):
         self.assertIsInstance(self.generator.model, T5ForConditionalGeneration)
         self.assertIsInstance(self.generator.text_processor.tokenizer, T5TokenizerFast)
 
-    def test_flashcard_generator_class(self):
+    def test_flashcard_generator_class_repr(self):
         generator_2 = FlashCardGenerator(model_name="test")
         generator_3 = FlashCardGenerator(model_name="test")
         self.assertEqual(repr(generator_2), "FlashCardGenerator('test', 'test', 'cpu', '100', '20')")
