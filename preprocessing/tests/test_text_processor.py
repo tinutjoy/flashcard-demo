@@ -27,7 +27,7 @@ class TestTextPreprocessor(unittest.TestCase):
     def setUp(self):
         self.processor = TextPreprocessor("valhalla/t5-small-qa-qg-hl")
 
-    def test_initialize_model(self):
+    def test_initialize_tokenizer(self):
         self.assertIsNone(self.processor.tokenizer)
         self.processor._initialize_tokenizer()
         self.assertIsInstance(self.processor.tokenizer, T5TokenizerFast)
