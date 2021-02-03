@@ -1,6 +1,7 @@
 """Tests for FlashCardGenerator"""
 import json
 import unittest
+from requests.exceptions import HTTPError
 
 from transformers.models.t5.tokenization_t5_fast import T5TokenizerFast
 from transformers.models.t5.modeling_t5 import T5ForConditionalGeneration
@@ -38,7 +39,9 @@ class TestFlashCardGenerator(unittest.TestCase):
 
     def test_load_tokenizer(self):
         model = self.generator.load_model(self.generator.model_name)
+        self.assertIsNotNone(model)
         self.assertIsInstance(model, T5ForConditionalGeneration)
+        self.assertRaises((HTTPError, OSError, EnvironmentError), self.generator.load_model, "test")
 
     def test_extract_answers(self):
         sentence, answer = self.generator._extract_answers(test_tokenizer_text[0])
