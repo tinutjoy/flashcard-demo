@@ -43,7 +43,7 @@ class TextPreprocessor:
         if self.tokenizer is None:
             self.tokenizer = self.load_tokenizer(self.tokenizer_name)
         assert self.tokenizer is not None, \
-            f"Issues with loading pretrained {self.tokenizer_name} model"
+            f"Issues with loading pretrained {self.tokenizer_name} tokenizer"
 
     def tokenize(self,
                  sentences: List[str],
