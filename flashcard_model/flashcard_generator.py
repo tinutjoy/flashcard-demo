@@ -1,7 +1,7 @@
 """Implement class FlashCardGenerator using T5 model. For more details on the model,
 please refer to https://huggingface.co/valhalla/t5-small-qa-qg-hl and https://arxiv.org/abs/1910.10683"""
 import json
-import itertools
+from itertools import chain
 
 from typing import List
 from typing import Optional
@@ -81,7 +81,8 @@ class FlashCardGenerator:
         self._initialize_model()
         # Extract possible answers.
         sentences, answers = self._extract_answers(text)
-        if len(list(itertools.chain(*answers))) == 0:
+        # Do not proceed if the extracted answer is empty
+        if not list(chain(*answers)):
             return None
         # Generate possible questions given the text and answers.
         question_gen_format = self.text_processor.prepare_question_generation_format(sentences, answers)
