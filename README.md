@@ -18,8 +18,7 @@ Start the analytics module server:
 ./flashcard_analytics/start_service
 ```
 
-Use the following script as an example to send a request to the server. It accepts the text and returns the 
-response as a json. Additionally, please try out the demo here ```http://127.0.0.1:8000/docs```.
+and see the demo here,  ```http://127.0.0.1:8000/docs```. Here is an example script. 
 
 ```sh
 ./flashcard_analytics/send_request "I live in Melbourne" 
