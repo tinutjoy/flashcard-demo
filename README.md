@@ -22,5 +22,3 @@ response as a json. Additionally, please try out the demo here ```http://127.0.0
 ```sh
 ./flashcard_analytics/send_request "I live in Melbourne" 
 ```
-Note: I have borrowed some code from the repo mentioned here (https://huggingface.co/valhalla/t5-base-qa-qg-hl) which has posted the pretrained model. However, I have rewritten the code to make it modular, readable, and debuggable. I have also added unittests for all the modules. Regarding API, I have used FastAPI (https://github.com/tiangolo/fastapi) to create an endpoint for the model.
-Unit tests are included in `tests` folder under each module.
