@@ -1,5 +1,7 @@
 # Flash Card Demo
 
+Generates a set of question/answer pairs a.k.a flashcards for a given text.
+
 #### Please install the packages from requirements.txt. The code is tested on python 3.7.
 
 To Run the CLI  demo, please use the following command. 
